@@ -1,11 +1,13 @@
 var App = React.createClass({
-  render: function() {
-    return (
-      React.createElement('div', {className: 'app'},
-        React.createElement(Counter), React.createElement(DisCounter)
-      )
-    );
-  }
+    render: function() {
+        return (
+            React.createElement('div', {
+                    className: 'app'
+                },
+                React.createElement(Counter), React.createElement(DisCounter)
+            )
+        );
+    }
 });
 var Counter = React.createClass({
     getInitialState: function() {
@@ -29,12 +31,15 @@ var Counter = React.createClass({
     },
     render: function() {
         return React.createElement('div', {className: 'button'},
-            React.createElement('div', {onClick: this.decrement, style: {cursor:'pointer'}},
-            React.createElement('span', {}, 'Odejmowanie ')),
-            React.createElement('div', {onClick: this.increment, style: {cursor:'pointer'}},
-            React.createElement('span', {}, 'Dodawanie ')),
+            React.createElement('div', {
+                    onClick: this.decrement,
+                    style: {cursor: 'pointer'}
+                },
+                React.createElement('span', {}, 'Odejmowanie ')),
+            React.createElement('div', {onClick: this.increment, style: {cursor: 'pointer'}},
+                React.createElement('span', {}, 'Dodawanie ')),
             React.createElement('span', {}, 'Licznik ' + this.state.counter)
-            )
+        )
     }
 });
 var DisCounter = React.createClass({
@@ -49,7 +54,7 @@ var DisCounter = React.createClass({
         });
     },
     render: function() {
-        return React.createElement('div', {onClick: this.decrement, style: {cursor:'pointer'}},
+        return React.createElement('div', {onClick: this.decrement, style: {cursor: 'pointer'}},
             React.createElement('span', {}, 'Odejmowanie ' + this.state.counter)
         );
     }
